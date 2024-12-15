@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "355566592453",
+    "project_id": "mybloodbuddy-4065e",
+    "storage_bucket": "mybloodbuddy-4065e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:355566592453:android:5956fab2f5842f4050ebac",
+        "android_client_info": {
+          "package_name": "com.mybloodbuddy.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcljpE8B9BdBNq01Wynqa4lP-ZIcstY3U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
