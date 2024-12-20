@@ -20,7 +20,7 @@ class MyTimeblock extends StatelessWidget {
         width: 100.0,
         padding: const EdgeInsets.all(10.0),
         decoration: BoxDecoration(
-          color: selected ? Colors.red.shade900 : Colors.grey.shade400,
+          color: selected ? Color(0xFFBC3B3B) : Colors.grey.shade400,
           borderRadius: BorderRadius.circular(10.0),
         ),
         child: Text(

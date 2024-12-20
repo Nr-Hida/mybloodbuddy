@@ -35,7 +35,7 @@ class AdminCheckUserProfilePage extends StatelessWidget {
           )),
           shadowColor: Colors.grey.shade200,
           elevation: 5.0,
-          backgroundColor: Colors.red.shade900,
+          backgroundColor: Color(0xFFBC3B3B),
         ),
         body: ListView(
           padding: const EdgeInsets.only(top: 10.0),
@@ -273,14 +273,14 @@ class AdminCheckUserProfilePage extends StatelessWidget {
                   "Last Donation Date:  ",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: Colors.red.shade900
+                    color: Color(0xFFBC3B3B)
                   ),
                 ),
                 Text(
                   formatLastDonationDate(arguments["lastDonated"]),
                   style: TextStyle(
                     // decoration: TextDecoration.underline,
-                    backgroundColor: Colors.red.shade900,
+                    backgroundColor: Color(0xFFBC3B3B),
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
                   ),

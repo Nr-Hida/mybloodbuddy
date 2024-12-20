@@ -56,7 +56,7 @@ class _AdminHomeState extends State<AdminHome>
               backgroundColor: Colors.grey.shade200,
               // color: Colors.white,
               activeColor: Colors.black,
-              tabBackgroundColor: Colors.red.shade900,
+              tabBackgroundColor: Color(0xFFBC3B3B)
               tabMargin: const EdgeInsets.all(8.0),
               padding: const EdgeInsets.all(10.0),
               gap: 5,

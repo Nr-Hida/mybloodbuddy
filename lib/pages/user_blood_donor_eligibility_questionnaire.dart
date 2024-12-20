@@ -1,4 +1,5 @@
 import "package:cloud_firestore/cloud_firestore.dart";
+import "package:firebase_auth/firebase_auth.dart";
 import "package:flutter/material.dart";
 import "package:mybb/components/my_button.dart";
 import "package:mybb/components/my_textfield.dart";
@@ -15,56 +16,56 @@ class UserBloodDonorEligibilityQuestionnaire extends StatefulWidget {
 }
 
 class _UserBloodDonorEligibilityQuestionnaireState extends State<UserBloodDonorEligibilityQuestionnaire> {
-  YesOrNo _feelingWellToday = YesOrNo.no;
-  YesOrNo _donatingToTestForHIV = YesOrNo.no;
-  YesOrNo _donatedBefore = YesOrNo.no;
-  YesOrNo _anyProblemsDuringOrAfterDonated = YesOrNo.no;
-  YesOrNo _takingAnyMeds = YesOrNo.no;
-  YesOrNo _sufferedFeverColdCough = YesOrNo.no;
-  YesOrNo _attackedByHeadacheMigraine = YesOrNo.no;
-  YesOrNo _seekedMedAttention = YesOrNo.no;
-  YesOrNo _jaundice = YesOrNo.no;
-  YesOrNo _drycough = YesOrNo.no;
-  YesOrNo _HepBOrHepC = YesOrNo.no;
-  YesOrNo _diabetes = YesOrNo.no;
-  YesOrNo _hiv = YesOrNo.no;
-  YesOrNo _hbp = YesOrNo.no;
-  YesOrNo _std = YesOrNo.no;
-  YesOrNo _heartDiseases = YesOrNo.no;
-  YesOrNo _malaria = YesOrNo.no;
-  YesOrNo _mentalIllnesses = YesOrNo.no;
-  YesOrNo _kidneyDiseases = YesOrNo.no;
-  YesOrNo _epilepsy = YesOrNo.no;
-  YesOrNo _asthma = YesOrNo.no;
-  YesOrNo _others = YesOrNo.no;
-  YesOrNo _hepBHepC = YesOrNo.no;
-  YesOrNo _undergoneSurgery = YesOrNo.no;
-  YesOrNo _receivedBloodTransfusion = YesOrNo.no;
-  YesOrNo _gotAccidentalNeedleStickInjury = YesOrNo.no;
-  YesOrNo _receivedImmunizationShotOrBeautyInjection = YesOrNo.no;
-  YesOrNo _hadDentalTreatment = YesOrNo.no;
-  YesOrNo _piercingsTattoosCuppingAcupuncture = YesOrNo.no;
-  YesOrNo _hadADrinkLast24Hours = YesOrNo.no;
-  YesOrNo _humanGrowthHormoneInjection = YesOrNo.no;
-  YesOrNo _corneaTransplant = YesOrNo.no;
-  YesOrNo _brainMembraneTransplant = YesOrNo.no;
-  YesOrNo _boneMarrowOrStemCellsTransplant = YesOrNo.no;
-  YesOrNo _visitedOrResidedvCJDCountries = YesOrNo.no;
-  YesOrNo _bloodTransfusionOrInjectionInTheUK = YesOrNo.no;
-  YesOrNo _visitedOrResidedInEuropeanCountries = YesOrNo.no;
-  YesOrNo _hadGaySex = YesOrNo.no;
-  YesOrNo _hadSexWithPro = YesOrNo.no;
-  YesOrNo _hadPaidOrReceivedPaymentForSex = YesOrNo.no;
-  YesOrNo _hadMoreThanOneSexPartner = YesOrNo.no;
-  YesOrNo _hadNewSexPartnerLast12Months = YesOrNo.no;
-  YesOrNo _injectedIllegalDrugs = YesOrNo.no;
-  YesOrNo _sexPartnerIncludedInAnyCategoryAbove = YesOrNo.no;
-  YesOrNo _testedPositiveForHIV = YesOrNo.no;
-  YesOrNo _thinkTestedPositiveForHIV = YesOrNo.no;
-  YesOrNo _onPeriod = YesOrNo.no;
-  YesOrNo _pregoOrMaybePrego = YesOrNo.no;
-  YesOrNo _haveBreastFeedingChild = YesOrNo.no;
-  YesOrNo _givenBirthOrHadMiscarriageLast6Months = YesOrNo.no;
+  YesOrNo _feelingWellToday = YesOrNo.unanswered;
+  YesOrNo _donatingToTestForHIV = YesOrNo.unanswered;
+  YesOrNo _donatedBefore = YesOrNo.unanswered;
+  YesOrNo _anyProblemsDuringOrAfterDonated = YesOrNo.unanswered;
+  YesOrNo _takingAnyMeds = YesOrNo.unanswered;
+  YesOrNo _sufferedFeverColdCough = YesOrNo.unanswered;
+  YesOrNo _attackedByHeadacheMigraine = YesOrNo.unanswered;
+  YesOrNo _seekedMedAttention = YesOrNo.unanswered;
+  YesOrNo _jaundice = YesOrNo.unanswered;
+  YesOrNo _drycough = YesOrNo.unanswered;
+  YesOrNo _HepBOrHepC = YesOrNo.unanswered;
+  YesOrNo _diabetes = YesOrNo.unanswered;
+  YesOrNo _hiv = YesOrNo.unanswered;
+  YesOrNo _hbp = YesOrNo.unanswered;
+  YesOrNo _std = YesOrNo.unanswered;
+  YesOrNo _heartDiseases = YesOrNo.unanswered;
+  YesOrNo _malaria = YesOrNo.unanswered;
+  YesOrNo _mentalIllnesses = YesOrNo.unanswered;
+  YesOrNo _kidneyDiseases = YesOrNo.unanswered;
+  YesOrNo _epilepsy = YesOrNo.unanswered;
+  YesOrNo _asthma = YesOrNo.unanswered;
+  YesOrNo _others = YesOrNo.unanswered;
+  YesOrNo _hepBHepC = YesOrNo.unanswered;
+  YesOrNo _undergoneSurgery = YesOrNo.unanswered;
+  YesOrNo _receivedBloodTransfusion = YesOrNo.unanswered;
+  YesOrNo _gotAccidentalNeedleStickInjury = YesOrNo.unanswered;
+  YesOrNo _receivedImmunizationShotOrBeautyInjection = YesOrNo.unanswered;
+  YesOrNo _hadDentalTreatment = YesOrNo.unanswered;
+  YesOrNo _piercingsTattoosCuppingAcupuncture = YesOrNo.unanswered;
+  YesOrNo _hadADrinkLast24Hours = YesOrNo.unanswered;
+  YesOrNo _humanGrowthHormoneInjection = YesOrNo.unanswered;
+  YesOrNo _corneaTransplant = YesOrNo.unanswered;
+  YesOrNo _brainMembraneTransplant = YesOrNo.unanswered;
+  YesOrNo _boneMarrowOrStemCellsTransplant = YesOrNo.unanswered;
+  YesOrNo _visitedOrResidedvCJDCountries = YesOrNo.unanswered;
+  YesOrNo _bloodTransfusionOrInjectionInTheUK = YesOrNo.unanswered;
+  YesOrNo _visitedOrResidedInEuropeanCountries = YesOrNo.unanswered;
+  YesOrNo _hadGaySex = YesOrNo.unanswered;
+  YesOrNo _hadSexWithPro = YesOrNo.unanswered;
+  YesOrNo _hadPaidOrReceivedPaymentForSex = YesOrNo.unanswered;
+  YesOrNo _hadMoreThanOneSexPartner = YesOrNo.unanswered;
+  YesOrNo _hadNewSexPartnerLast12Months = YesOrNo.unanswered;
+  YesOrNo _injectedIllegalDrugs = YesOrNo.unanswered;
+  YesOrNo _sexPartnerIncludedInAnyCategoryAbove = YesOrNo.unanswered;
+  YesOrNo _testedPositiveForHIV = YesOrNo.unanswered;
+  YesOrNo _thinkTestedPositiveForHIV = YesOrNo.unanswered;
+  YesOrNo _onPeriod = YesOrNo.unanswered;
+  YesOrNo _pregoOrMaybePrego = YesOrNo.unanswered;
+  YesOrNo _haveBreastFeedingChild = YesOrNo.unanswered;
+  YesOrNo _givenBirthOrHadMiscarriageLast6Months = YesOrNo.unanswered;
 
   // Controllers
   final _problemsDonatingController = TextEditingController();
@@ -219,7 +220,7 @@ class _UserBloodDonorEligibilityQuestionnaireState extends State<UserBloodDonorE
               // color: Colors.white
             )
           ),
-          // backgroundColor: Colors.red.shade900,
+          // backgroundColor: Color(0xFFBC3B3B),
         ),
         body: Padding(
           padding: const EdgeInsets.only(left: 15.0, bottom: 15.0),

@@ -1,3 +1,5 @@
+import "package:cloud_firestore/cloud_firestore.dart";
+import "package:firebase_auth/firebase_auth.dart";
 import "package:flutter/material.dart";
 import "package:mybb/components/my_button.dart";
 
@@ -7,6 +9,27 @@ class UserConfirmAppointment extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final arguments = (ModalRoute.of(context)?.settings.arguments ?? <String, dynamic>{}) as Map;
+
+    void confirmAppointment() {
+      try {
+        final userData = <String, dynamic>{};
+        userData["lastDonated"] = Timestamp.fromDate(arguments["chosenDateTime"]);
+
+        final docRef =  FirebaseFirestore.instance.collection("users").doc(FirebaseAuth.instance.currentUser!.uid);
+        docRef.update(userData);
+        Navigator.pushNamedAndRemoveUntil(context, "user_home", (Route<dynamic> route) => false);
+      } on FirebaseAuthException catch (e) {
+        print("Something went wrong when updating lastDonated: $e");
+        // Pop the loading circle
+        if (context.mounted) {
+          Navigator.pop(context);
+        }
+        // Pop the confirm dialog
+        if (context.mounted) {
+          Navigator.pop(context);
+        }
+      }
+    };
     
     return SafeArea(
       child: Scaffold(
@@ -62,9 +85,7 @@ class UserConfirmAppointment extends StatelessWidget {
             const SizedBox(height: 20.0),
             MyButton(
               text: "Done",
-              onTap: () => {
-                Navigator.pushNamedAndRemoveUntil(context, "user_home", (Route<dynamic> route) => false)
-              },
+              onTap: confirmAppointment,
               verificationPassed: true,
             ),
           ],

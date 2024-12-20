@@ -48,7 +48,7 @@ class _UserHomeState extends State<UserHome> {
               )),
             ],
           ),
-          backgroundColor: Colors.red.shade900,
+          backgroundColor: Color(0xFFBC3B3B)
         ),
         bottomNavigationBar: Container(
           color: Colors.grey.shade200,
@@ -64,7 +64,7 @@ class _UserHomeState extends State<UserHome> {
               backgroundColor: Colors.grey.shade200,
               // color: Colors.white,
               activeColor: Colors.black,
-              tabBackgroundColor: Colors.red.shade900,
+              tabBackgroundColor: Color(0xFFBC3B3B)
               tabMargin: const EdgeInsets.all(8.0),
               padding: const EdgeInsets.all(10.0),
               gap: 8,

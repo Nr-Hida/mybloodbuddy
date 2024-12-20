@@ -21,7 +21,7 @@ class _YesOrNoWidgetState extends State<YesOrNoWidget> {
     return Row(
       children: [
         Radio<YesOrNo>(
-          activeColor: Colors.red.shade900,
+          activeColor: Color(0xFFBC3B3B),
           value: YesOrNo.yes,
           groupValue: widget.question,
           onChanged: (YesOrNo? value) {
@@ -30,7 +30,7 @@ class _YesOrNoWidgetState extends State<YesOrNoWidget> {
         ),
         const Text("Yes"),
         Radio<YesOrNo>(
-          activeColor: Colors.red.shade900,
+          activeColor: Color(0xFFBC3B3B),
           value: YesOrNo.no,
           groupValue: widget.question,
           onChanged: (YesOrNo? value) {

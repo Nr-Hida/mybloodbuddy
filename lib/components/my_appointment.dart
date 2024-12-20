@@ -34,7 +34,7 @@ class MyAppointment extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.all(10.0),
               decoration: BoxDecoration(
-                color: Colors.red.shade900,
+                color: Color(0xFFBC3B3B),
                 borderRadius: BorderRadius.circular(10),
                 boxShadow: const [
                   BoxShadow(
@@ -65,7 +65,7 @@ class MyAppointment extends StatelessWidget {
             padding: const EdgeInsets.only(right: 25.0, bottom: 25.0, left: 25.0),
             child: Container(
               decoration: BoxDecoration(
-                color: Colors.red.shade900,
+                color: Color(0xFFBC3B3B),
                 borderRadius: BorderRadius.circular(10),
                 boxShadow: const [
                   BoxShadow(

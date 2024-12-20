@@ -10,7 +10,7 @@ class BloodDonorCard extends StatelessWidget {
       padding: const EdgeInsets.all(25.0),
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.red.shade900,
+          color: Color(0xFFBC3B3B)
           borderRadius: BorderRadius.circular(10.0),
           boxShadow: const [
             BoxShadow(

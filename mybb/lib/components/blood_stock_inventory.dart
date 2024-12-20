@@ -16,7 +16,7 @@ class BloodStockInventory extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.white,
               border: Border.all(
-                color: Colors.red.shade900,
+                color: Color(0xFFBC3B3B)
               ),
               borderRadius: BorderRadius.circular(10.0),
               boxShadow: [

@@ -60,7 +60,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
           )),
           shadowColor: Colors.grey.shade200,
           elevation: 5.0,
-          backgroundColor: Colors.red.shade900,
+          backgroundColor: Color(0xFFBC3B3B),
         ),
         body: FutureBuilder<mybb_user.User>(
           future: user,

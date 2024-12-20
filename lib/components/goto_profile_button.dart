@@ -18,7 +18,7 @@ class GotoProfileButton extends StatelessWidget {
         padding: const EdgeInsets.all(10),
         margin: const EdgeInsets.symmetric(horizontal: 10),
         decoration: BoxDecoration(
-          color: Colors.red.shade900,
+          color: Color(0xFFBC3B3B),
           borderRadius: BorderRadius.circular(8.0)
         ),
         child: Center(

@@ -19,7 +19,7 @@ class MyPercentIndicator extends StatelessWidget {
     } else if (percent > .49) {
       return Colors.yellow;
     } else {
-      return Colors.red.shade900;
+      return Color(0xFFBC3B3B);
     }
   }
 

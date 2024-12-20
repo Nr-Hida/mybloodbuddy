@@ -16,7 +16,7 @@ class UpdateUserProfilePage extends StatefulWidget {
   State<UpdateUserProfilePage> createState() => _UpdateUserProfilePageState();
 }
 
-class _UpdateUserProfilePageState extends State<UpdateUserProfilePage> {
+class _UpdateUserProfilePageState extends State<UpdateUserProfilePage> with ChangeNotifier {
   late Future<mybb_user.User> user;
   int _currentHeight = 160;
   int _currentWeight = 55;
@@ -80,6 +80,7 @@ class _UpdateUserProfilePageState extends State<UpdateUserProfilePage> {
       // ...to non-updatable user profile
       if (context.mounted) {
         Navigator.pop(context);
+        Navigator.pushNamedAndRemoveUntil(context, "user_home", (Route<dynamic> route) => false);
         Navigator.pushNamed(context, "user_profile");
       }
     } on FirebaseAuthException catch (e) {
@@ -149,7 +150,7 @@ class _UpdateUserProfilePageState extends State<UpdateUserProfilePage> {
           title: const Text("Profile"),
           shadowColor: Colors.grey.shade200,
           elevation: 5.0,
-          backgroundColor: Colors.red.shade900,
+          backgroundColor: Color(0xFFBC3B3B),
         ),
         body: FutureBuilder<mybb_user.User>(
           future: user,
@@ -449,7 +450,7 @@ class _UpdateUserProfilePageState extends State<UpdateUserProfilePage> {
                       //       mainAxisAlignment: MainAxisAlignment.center,
                       //       children: [
                       //         Radio<BloodType>(
-                      //           activeColor: Colors.red.shade900,
+                      //           activeColor: Color(0xFFBC3B3B),
                       //           value: BloodType.groupAplus,
                       //           groupValue: _bloodType,
                       //           onChanged: (BloodType? value) {
@@ -460,7 +461,7 @@ class _UpdateUserProfilePageState extends State<UpdateUserProfilePage> {
                       //         ),
                       //         const Text("Group A+"),
                       //         Radio<BloodType>(
-                      //           activeColor: Colors.red.shade900,
+                      //           activeColor: Color(0xFFBC3B3B),
                       //           value: BloodType.groupAminus,
                       //           groupValue: _bloodType,
                       //           onChanged: (BloodType? value) {
@@ -476,7 +477,7 @@ class _UpdateUserProfilePageState extends State<UpdateUserProfilePage> {
                       //       mainAxisAlignment: MainAxisAlignment.center,
                       //       children: [
                       //         Radio<BloodType>(
-                      //           activeColor: Colors.red.shade900,
+                      //           activeColor: Color(0xFFBC3B3B),
                       //           value: BloodType.groupBplus,
                       //           groupValue: _bloodType,
                       //           onChanged: (BloodType? value) {
@@ -487,7 +488,7 @@ class _UpdateUserProfilePageState extends State<UpdateUserProfilePage> {
                       //         ),
                       //         const Text("Group B+"),
                       //         Radio<BloodType>(
-                      //           activeColor: Colors.red.shade900,
+                      //           activeColor: Color(0xFFBC3B3B),
                       //           value: BloodType.groupBminus,
                       //           groupValue: _bloodType,
                       //           onChanged: (BloodType? value) {
@@ -503,7 +504,7 @@ class _UpdateUserProfilePageState extends State<UpdateUserProfilePage> {
                       //       mainAxisAlignment: MainAxisAlignment.center,
                       //       children: [
                       //         Radio<BloodType>(
-                      //           activeColor: Colors.red.shade900,
+                      //           activeColor: Color(0xFFBC3B3B),
                       //           value: BloodType.groupABplus,
                       //           groupValue: _bloodType,
                       //           onChanged: (BloodType? value) {
@@ -514,7 +515,7 @@ class _UpdateUserProfilePageState extends State<UpdateUserProfilePage> {
                       //         ),
                       //         const Text("Group AB+"),
                       //         Radio<BloodType>(
-                      //           activeColor: Colors.red.shade900,
+                      //           activeColor: Color(0xFFBC3B3B),
                       //           value: BloodType.groupABminus,
                       //           groupValue: _bloodType,
                       //           onChanged: (BloodType? value) {
@@ -530,7 +531,7 @@ class _UpdateUserProfilePageState extends State<UpdateUserProfilePage> {
                       //       mainAxisAlignment: MainAxisAlignment.center,
                       //       children: [
                       //         Radio<BloodType>(
-                      //           activeColor: Colors.red.shade900,
+                      //           activeColor: Color(0xFFBC3B3B),
                       //           value: BloodType.groupOplus,
                       //           groupValue: _bloodType,
                       //           onChanged: (BloodType? value) {
@@ -541,7 +542,7 @@ class _UpdateUserProfilePageState extends State<UpdateUserProfilePage> {
                       //         ),
                       //         const Text("Group O+"),
                       //         Radio<BloodType>(
-                      //           activeColor: Colors.red.shade900,
+                      //           activeColor: Color(0xFFBC3B3B),
                       //           value: BloodType.groupOminus,
                       //           groupValue: _bloodType,
                       //           onChanged: (BloodType? value) {
@@ -609,6 +610,25 @@ class _UpdateUserProfilePageState extends State<UpdateUserProfilePage> {
                   const SizedBox(height: 15.0),
                   MyButton(
                     text: "Update",
+                    // onTap: () {
+                    //   showDialog(context: context, builder: (context) {
+                    //     return AlertDialog(
+                    //       title: const Text("Are you sure you want to update your profile?"),
+                    //       actions: [
+                    //         IconButton(onPressed: snapshot.data!.updateProfile, icon: const Icon(Icons.check)),
+                    //         IconButton(onPressed: () => Navigator.pop(context), icon: const Icon(Icons.close)),
+                    //       ],
+                    //     );
+                    //   });
+
+                    //   // Replace updatable user profile...
+                    //   // ...to non-updatable user profile
+                    //   if (context.mounted) {
+                    //     Navigator.pop(context);
+                    //     Navigator.pushNamed(context, "user_profile");
+                    //     // Navigator.pushNamedAndRemoveUntil(context, "user_home", (Route<dynamic> route) => false);
+                    //   }
+                    // },
                     onTap: confirmUpdateProfileDialog,
                     verificationPassed: _bloodType.index != BloodType.undetermined.index,
                   ),

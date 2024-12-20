@@ -77,7 +77,7 @@ class UserBookAppointment extends StatelessWidget {
               Container(
                 margin: const EdgeInsets.all(10.0),
                 decoration: BoxDecoration(
-                  color: hasUserChosenTheHospital() ? Colors.red.shade900 : Colors.grey.shade400,
+                  color: hasUserChosenTheHospital() ? Color(0xFFBC3B3B) : Colors.grey.shade400,
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 child: ListTile(
@@ -113,7 +113,7 @@ class UserBookAppointment extends StatelessWidget {
               Container(
                 margin: const EdgeInsets.all(10.0),
                 decoration: BoxDecoration(
-                  color: hasUserChosenTheDate() ? Colors.red.shade900 : Colors.grey.shade400,
+                  color: hasUserChosenTheDate() ? Color(0xFFBC3B3B) : Colors.grey.shade400,
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 child: ListTile(

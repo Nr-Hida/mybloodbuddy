@@ -58,7 +58,7 @@ class UserBookingReview extends StatelessWidget {
                         color: Colors.grey.shade400,
                         border: Border(
                           left: BorderSide(
-                            color: Colors.red.shade900,
+                            color: Color(0xFFBC3B3B),
                             width: 5.0,
                             strokeAlign: BorderSide.strokeAlignCenter
                           )

@@ -266,7 +266,7 @@ class _UpdateUserProfilePageState extends State<UserSignup> {
               child: Container(
                 margin: const EdgeInsets.symmetric(vertical: 15.0),
                 decoration: BoxDecoration(
-                  color: Colors.red.shade900,
+                  color: Color(0xFFBC3B3B),
                   borderRadius: BorderRadius.circular(15.0)
                 ),
                 child: ListTile(
@@ -307,7 +307,7 @@ class _UpdateUserProfilePageState extends State<UserSignup> {
                   ),
                   const SizedBox(width: 30.0),
                   Radio<Gender>(
-                    activeColor: Colors.red.shade900,
+                    activeColor: Color(0xFFBC3B3B),
                     value: Gender.male,
                     groupValue: _gender,
                     onChanged: (Gender? value) {
@@ -319,7 +319,7 @@ class _UpdateUserProfilePageState extends State<UserSignup> {
                   const Text("Male"),
                   const SizedBox(width: 7.0),
                   Radio<Gender>(
-                    activeColor: Colors.red.shade900,
+                    activeColor: Color(0xFFBC3B3B),
                     value: Gender.female,
                     groupValue: _gender,
                     onChanged: (Gender? value) {
@@ -356,7 +356,7 @@ class _UpdateUserProfilePageState extends State<UserSignup> {
                           Row(
                             children: [
                               Radio(
-                                activeColor: Colors.red.shade900,
+                                activeColor: Color(0xFFBC3B3B),
                                 value: Race.malay,
                                 groupValue: _race,
                                 onChanged: (Race? value) {
@@ -371,7 +371,7 @@ class _UpdateUserProfilePageState extends State<UserSignup> {
                           Row(
                             children: [
                               Radio(
-                                activeColor: Colors.red.shade900,
+                                activeColor: Color(0xFFBC3B3B),
                                 value: Race.chinese,
                                 groupValue: _race,
                                 onChanged: (Race? value) {
@@ -390,7 +390,7 @@ class _UpdateUserProfilePageState extends State<UserSignup> {
                           Row(
                             children: [
                               Radio(
-                                activeColor: Colors.red.shade900,
+                                activeColor: Color(0xFFBC3B3B),
                                 value: Race.iban,
                                 groupValue: _race,
                                 onChanged: (Race? value) {
@@ -406,7 +406,7 @@ class _UpdateUserProfilePageState extends State<UserSignup> {
                           Row(
                             children: [
                               Radio(
-                                activeColor: Colors.red.shade900,
+                                activeColor: Color(0xFFBC3B3B),
                                 value: Race.kadazan,
                                 groupValue: _race,
                                 onChanged: (Race? value) {
@@ -425,7 +425,7 @@ class _UpdateUserProfilePageState extends State<UserSignup> {
                           Row(
                             children: [
                               Radio(
-                                activeColor: Colors.red.shade900,
+                                activeColor: Color(0xFFBC3B3B),
                                 value: Race.murut,
                                 groupValue: _race,
                                 onChanged: (Race? value) {
@@ -440,7 +440,7 @@ class _UpdateUserProfilePageState extends State<UserSignup> {
                           Row(
                             children: [
                               Radio(
-                                activeColor: Colors.red.shade900,
+                                activeColor: Color(0xFFBC3B3B),
                                 value: Race.bidayuh,
                                 groupValue: _race,
                                 onChanged: (Race? value) {
@@ -459,7 +459,7 @@ class _UpdateUserProfilePageState extends State<UserSignup> {
                           Row(
                             children: [
                               Radio(
-                                activeColor: Colors.red.shade900,
+                                activeColor: Color(0xFFBC3B3B),
                                 value: Race.indian,
                                 groupValue: _race,
                                 onChanged: (Race? value) {
@@ -474,7 +474,7 @@ class _UpdateUserProfilePageState extends State<UserSignup> {
                           Row(
                             children: [
                               Radio(
-                                activeColor: Colors.red.shade900,
+                                activeColor: Color(0xFFBC3B3B),
                                 value: Race.bajau,
                                 groupValue: _race,
                                 onChanged: (Race? value) {
@@ -491,7 +491,7 @@ class _UpdateUserProfilePageState extends State<UserSignup> {
                       Row(
                         children: [
                           Radio(
-                            activeColor: Colors.red.shade900,
+                            activeColor: Color(0xFFBC3B3B),
                             value: Race.melanau,
                             groupValue: _race,
                             onChanged: (Race? value) {
@@ -534,7 +534,7 @@ class _UpdateUserProfilePageState extends State<UserSignup> {
                       Row(
                         children: [
                           Radio<MarriageStatus>(
-                            activeColor: Colors.red.shade900,
+                            activeColor: Color(0xFFBC3B3B),
                             value: MarriageStatus.single,
                             groupValue: _marriageStatus,
                             onChanged: (MarriageStatus? value) {
@@ -549,7 +549,7 @@ class _UpdateUserProfilePageState extends State<UserSignup> {
                       Row(
                         children: [
                           Radio<MarriageStatus>(
-                            activeColor: Colors.red.shade900,
+                            activeColor: Color(0xFFBC3B3B),
                             value: MarriageStatus.married,
                             groupValue: _marriageStatus,
                             onChanged: (MarriageStatus? value) {
@@ -564,7 +564,7 @@ class _UpdateUserProfilePageState extends State<UserSignup> {
                       Row(
                         children: [
                           Radio<MarriageStatus>(
-                            activeColor: Colors.red.shade900,
+                            activeColor: Color(0xFFBC3B3B),
                             value: MarriageStatus.divorcedOrSeparated,
                             groupValue: _marriageStatus,
                             onChanged: (MarriageStatus? value) {

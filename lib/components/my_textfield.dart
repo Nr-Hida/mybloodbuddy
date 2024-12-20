@@ -22,7 +22,7 @@ class MyTextfield extends StatelessWidget {
         decoration: InputDecoration(
           hintText: hintText,
         ),
-        cursorColor: Colors.red.shade900,
+        cursorColor: Color(0xFFBC3B3B),
       ),
     );
   }
